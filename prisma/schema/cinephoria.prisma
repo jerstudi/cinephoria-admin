@@ -1,0 +1,97 @@
+model Movie {
+  id            String   @id @default(nanoid())
+  idx           Int      @unique @default(autoincrement())
+  identifier    String   @unique
+  title         String
+  poster        String
+  description   String
+  actors        String
+  directors     String
+  musicComposer String
+  synopsis      String
+  movieDate     Int
+  gender        String
+  ageLimit      Int
+  favorite      Boolean
+  duration      Int
+  active        Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  User          User[]
+  cineSessions  CineSession[]
+}
+
+model Cinema {
+  id           String        @id @default(nanoid())
+  idx          Int           @unique @default(autoincrement())
+  identifier   String        @unique
+  name         String
+  city         String
+  cineSessions CineSession[]
+  reservation  Reservation[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+}
+
+model Hall {
+  id              String        @id @default(nanoid())
+  idx             Int           @unique @default(autoincrement())
+  identifier      String        @unique
+  hallNumber      Int
+  type            String
+  capacity        Int
+  disabled_places Int
+  cineSession     CineSession[]
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+}
+
+model City {
+  id         String   @id @default(nanoid())
+  idx        Int      @unique @default(autoincrement())
+  identifier String   @unique
+  name       String
+  cp         Int
+  country    String
+  region     String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model CineSession {
+  id              String        @id @default(nanoid())
+  idx             Int           @unique @default(autoincrement())
+  identifier      String        @unique
+  movieId         String
+  movie           Movie         @relation(fields: [movieId], references: [id])
+  sessionStart    DateTime
+  sessionEnd      DateTime
+  date            DateTime
+  cineId          String
+  cinema          Cinema        @relation(fields: [cineId], references: [id])
+  hallId          String
+  hall            Hall          @relation(fields: [hallId], references: [id])
+  note            Int
+  pricing         Int
+  reservations    Reservation[]
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+}
+
+model Reservation {
+  id             String       @id @default(nanoid())
+  idx            Int          @unique @default(autoincrement())
+  identifier     String       @unique
+  userId         String
+  user           User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  qr_code        String
+  status         String
+  movieId        String
+  cineId         String
+  cinema         Cinema       @relation(fields: [cineId], references: [id])
+  cineSessions   CineSession[]
+  quantity       Int
+  disabled_paces Int
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+}

@@ -1,9 +1,25 @@
-Welcome to [NOW.TS](https://nowts.app) directory.
+# CINEPHORIA APP/ADMIN
 
-## Setup the project
+Cette partie de l'application Cinephoria concerne l'administration et la gestion des ressources nécessaires au fonctionnement de l'application client.
 
-Please follow the [NOW.TS Course](https://codeline.app/courses/clqn8pmte0001lr54itcjzl59/lessons/clqn8pz990003112iia11p7uo) to setup the project.
+## Introduction
 
-## Contributions
+Pour des raisons d'architecture, la partie administrateur est distincte de la partie client. Ainsi, nous avons deux applications:
 
-Feel free to create a pull request with any changes you think valuable.
+- une plateforme d'administration et de gestion des données permettant d'alimenter la base données
+- une application client consommant les données contenues dans la base de données
+
+Toutes les opérations CRUD sont accessibles sur la plateforme d'administration.
+
+## Déploiement en local
+
+Afin de déployer en local le projet, il est nécessaire de suivre les étapes suivantes:
+
+- Créer une base de données PostgreSQL;
+- Renseigner les variables d'environnement dans un fichier .env sur la base du template (.env-template) à la racine du projet;
+- Enfin, exécuter les commandes suivantes:
+
+```bash
+pnpm install
+pnpm run dev
+```

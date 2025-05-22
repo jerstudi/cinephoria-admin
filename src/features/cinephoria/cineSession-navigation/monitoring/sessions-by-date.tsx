@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import * as React from "react";
@@ -191,7 +192,7 @@ export function SessionsByDate({ data, className }: SessionsByDateProps) {
     () => ({
       sessions: data.length,
     }),
-    [],
+    [data.length],
   );
   // console.log("totalData", totalData);
 

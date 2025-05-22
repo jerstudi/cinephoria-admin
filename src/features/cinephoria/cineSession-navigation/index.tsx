@@ -37,7 +37,7 @@ export const CineSessionsNavigation = ({
   movies,
   halls,
   // columns,
-  members,
+  // members,
 }: Props) => {
   // const movies = cineSessions.map((cineSession) => cineSession.movie);
   // const halls = cineSessions.map((cineSession) => cineSession.hall);

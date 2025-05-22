@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/prefer-nullish-coalescing */
 import { ContactSupportDialog } from "@/features/contact/support/contact-support-dialog";
 import Link from "next/link";
 import type { PropsWithChildren } from "react";

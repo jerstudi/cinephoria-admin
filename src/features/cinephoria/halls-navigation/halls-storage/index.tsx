@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { LoaderCircle } from "@/components/ui/loader-circle";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { HallsNavigation } from "..";
 import { retrieveAllFromHallsData } from "../../../../../app/orgs/[orgSlug]/(navigation)/hall/hall.action";
 import type { Halls } from "../data/schema";
@@ -18,7 +19,7 @@ type Props = {
 };
 
 export const HallsStorage = ({ halls, members }: Props) => {
-  const queryClient = useQueryClient();
+  // const queryClient = useQueryClient();
 
   const {
     isPending,

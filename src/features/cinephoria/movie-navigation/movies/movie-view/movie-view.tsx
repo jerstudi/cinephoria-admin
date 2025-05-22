@@ -34,7 +34,7 @@ import {
 } from "lucide-react";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
-import { useParams, useRouter } from "next/navigation";
+// import { useParams, useRouter } from "next/navigation";
 import React from "react";
 import { toast } from "sonner";
 import type { Movie } from "../data/schema";
@@ -49,8 +49,8 @@ export function MovieView({ row }: MovieViewProps) {
   const [showEdit, setShowEdit] = React.useState<boolean>(false);
 
   const session = useSession();
-  const router = useRouter();
-  const params = useParams<{ orgSlug: string }>();
+  // const router = useRouter();
+  // const params = useParams<{ orgSlug: string }>();
 
   const movie = row.original;
 

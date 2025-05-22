@@ -44,7 +44,7 @@ export const Hero = () => {
                 Get started
               </ShimmerButton>
               <Link
-                href="#pricing"
+                href="/posts"
                 className={buttonVariants({ variant: "link" })}
               >
                 Learn more <span aria-hidden="true">→</span>

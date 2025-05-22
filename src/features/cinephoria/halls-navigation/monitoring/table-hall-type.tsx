@@ -15,8 +15,8 @@ type TableHallTypeProps = {
 
 export function TableHallType({ hallsData }: TableHallTypeProps) {
   const halls = hallsData.hall;
-  const cinemas = hallsData.cinema;
-  const cities = hallsData.cities;
+  // const cinemas = hallsData.cinema;
+  // const cities = hallsData.cities;
 
   return (
     <div className="my-4 w-full rounded-lg border-none border-primary bg-white/5 p-4">

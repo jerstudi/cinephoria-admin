@@ -39,7 +39,7 @@ type DataTableChartProps = {
 export function DataTableChartGender({ table }: DataTableChartProps) {
   const totalGenders = React.useMemo(() => {
     return table.reduce((acc, curr) => acc + curr.count, 0);
-  }, []);
+  }, [table]);
 
   // Générer dynamiquement un mapping des genders vers des valeurs de fill
   const uniqueGenders = Array.from(new Set(table.map((entry) => entry.gender))); // Liste unique des genders
@@ -57,7 +57,7 @@ export function DataTableChartGender({ table }: DataTableChartProps) {
     ...entry,
     fill: fillTable[entry.gender], // Associe la valeur `fill` générée dynamiquement
   }));
-  console.log(updatedTable);
+  // console.log(updatedTable);
 
   return (
     <Card className="flex flex-col">

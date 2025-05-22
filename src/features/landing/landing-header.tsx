@@ -91,8 +91,8 @@ export function LandingHeader() {
           }}
           className="flex items-center gap-4 text-sm font-medium text-muted-foreground"
         >
-          <Link href="#features">Features</Link>
-          <Link href="#pricing">Pricing</Link>
+          {/* <Link href="#features">Features</Link> */}
+          {/* <Link href="#pricing">Pricing</Link> */}
           <Link href="/posts">Blog</Link>
           <AuthButtonClient />
           <ThemeToggle />

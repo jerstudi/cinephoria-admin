@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/dialog";
 import { Form, useZodForm } from "@/components/ui/form";
 import { LoaderCircle } from "@/components/ui/loader-circle";
+import { cn } from "@/lib/utils";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { type Row } from "@tanstack/react-table";
 import { Trash2 } from "lucide-react";
@@ -41,7 +42,7 @@ export function DeleteCineSessionForm<TData extends CineSession>({
   className,
 }: DeleteCineSessionProps<TData>) {
   const [open, setOpen] = React.useState<boolean>(false);
-  const [name, setName] = React.useState<string>("");
+  // const [name, setName] = React.useState<string>("");
 
   const queryClient = useQueryClient();
   const session = useSession();
@@ -97,7 +98,10 @@ export function DeleteCineSessionForm<TData extends CineSession>({
         <Button
           variant={"ghost"}
           size={"sm"}
-          className="flex w-full items-center justify-start text-sm"
+          className={cn(
+            "flex w-full items-center justify-start text-sm",
+            className,
+          )}
         >
           <div className="flex w-full items-center justify-between">
             <span>Delete</span>

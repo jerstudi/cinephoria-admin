@@ -4,7 +4,6 @@ import { orgAction } from "@/lib/actions/safe-actions";
 import { prisma } from "@/lib/prisma";
 import { generateItemIdentifier } from "@/lib/utils";
 import { nanoid } from "nanoid";
-import { revalidatePath } from "next/cache";
 import { z } from "zod";
 
 const CreateHallSchema = z.object({

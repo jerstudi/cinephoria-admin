@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -86,7 +87,7 @@ export function UpdateMovieForm<TData extends Movie>({
   onClose,
 }: DataTableMovieUpdateProps<TData>) {
   const [open, setOpen] = React.useState<boolean>(isDialogOpen ?? false);
-  const [title, setTitle] = React.useState<string>("");
+  // const [title, setTitle] = React.useState<string>("");
 
   const queryClient = useQueryClient();
   const session = useSession();

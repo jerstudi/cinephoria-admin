@@ -1,8 +1,7 @@
 "use client";
 
 import { LoaderCircle } from "@/components/ui/loader-circle";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
-import type { ColumnDef } from "@tanstack/react-table";
+import { useQuery } from "@tanstack/react-query";
 import { CineSessionsNavigation } from "..";
 import { getCineSessions } from "../../../../../app/orgs/[orgSlug]/(navigation)/cineSession/cineSession.action";
 import { retrieveAllFromHallsData } from "../../../../../app/orgs/[orgSlug]/(navigation)/hall/hall.action";
@@ -11,7 +10,6 @@ import type { CineSession } from "../data/schema";
 
 type Props = {
   cineSessions: CineSession[];
-  // columns: ColumnDef<CineSession>[];
   members: {
     id: string;
     name: string | null;
@@ -21,11 +19,10 @@ type Props = {
 };
 
 export const CineSessionsStorage = ({
-  cineSessions,
   // columns,
   members,
 }: Props) => {
-  const queryClient = useQueryClient();
+  // const queryClient = useQueryClient();
 
   const {
     isPending: isPendingCineSessions,

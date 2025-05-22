@@ -6,7 +6,7 @@ import { CreateCineSessionForm } from "./create/create-cineSession-form";
 import type { CineSession } from "./data/schema";
 import { SessionsByDate } from "./monitoring/sessions-by-date";
 
-type DataTableProps<TData, TValue> = {
+type DataTableProps<TData> = {
   // columns: ColumnDef<TData, TValue>[];
   data: TData[];
   movies: Movie[];
@@ -14,11 +14,11 @@ type DataTableProps<TData, TValue> = {
   className?: string;
 };
 
-export function CineSessionsDashboardLayout<TData extends CineSession, TValue>({
+export function CineSessionsDashboardLayout<TData extends CineSession>({
   data,
   movies,
   halls,
-}: DataTableProps<TData, TValue>) {
+}: DataTableProps<TData>) {
   // const moviesByStatusFiltered = moviesFilteredByStatus(data);
   // const moviesByFavoriteFiltered = moviesFilteredByFavorite(data);
   // const moviesByGenderFiltered = moviesFilteredByGender(data);

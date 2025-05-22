@@ -99,12 +99,8 @@ export default async function RoutePage(props: PostParams) {
           <LayoutDescription className="drop-shadow-sm">
             Published by {formatDate(new Date(post.attributes.date))} · Reading
             time {calculateReadingTime(post.content)} minutes · Created by{" "}
-            <Typography
-              variant="link"
-              as={Link}
-              href={SiteConfig.maker.website}
-            >
-              {SiteConfig.maker.name}
+            <Typography variant="link" as={Link} href={"/"}>
+              {SiteConfig.company.name}
             </Typography>
           </LayoutDescription>
         </div>

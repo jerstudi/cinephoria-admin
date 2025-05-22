@@ -1,24 +1,35 @@
 import { Typography } from "@/components/ui/typography";
 import { Layout, LayoutContent } from "@/features/page/layout";
 import { SiteConfig } from "@/site-config";
+import Image from "next/image";
 import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <footer className="border border-border bg-card">
-      <Layout className="py-24">
-        <LayoutContent className="flex justify-between max-lg:flex-col">
+    <footer className="bg-background">
+      <Layout size="lg" className="py-24">
+        <LayoutContent className="mx-auto flex w-full max-w-7xl justify-between max-lg:flex-col">
           <div className="flex flex-col gap-4">
-            <div className="space-y-1">
-              <Typography variant="h3">{SiteConfig.title}</Typography>
-              <Typography variant="muted">{SiteConfig.company.name}</Typography>
-              <Typography variant="muted">
-                {SiteConfig.company.address}
-              </Typography>
+            <div className="flex items-center gap-4">
+              <Image
+                src="/assets/svg/Logo_group.svg"
+                alt="Cinephoria group logo"
+                width={100}
+                height={100}
+                className="w-60"
+              />
+              <Image
+                src="/assets/svg/GEI.svg"
+                alt="Cinephoria group logo"
+                width={100}
+                height={100}
+                className="w-40"
+              />
             </div>
             <Typography variant="muted" className="italic">
-              © {new Date().getFullYear()} {SiteConfig.company.name} - All
-              rights reserved.
+              © {new Date().getFullYear()}{" "}
+              <Link href="/">{SiteConfig.company.name}</Link> - All rights
+              reserved.
             </Typography>
           </div>
           <div className="flex flex-col items-end gap-4">
@@ -42,14 +53,14 @@ export const Footer = () => {
           </div>
           <div className="flex flex-col items-end gap-4">
             <Typography variant="large">Resources</Typography>
-            <Typography
+            {/* <Typography
               as={Link}
               variant="muted"
               className="hover:underline"
               href="/posts"
             >
               Blog
-            </Typography>
+            </Typography> */}
             <Typography
               as={Link}
               variant="muted"

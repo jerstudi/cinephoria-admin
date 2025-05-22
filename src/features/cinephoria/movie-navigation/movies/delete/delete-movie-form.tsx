@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
 "use client";
 import { Button } from "@/components/ui/button";
@@ -43,7 +44,7 @@ export function DeleteMovieForm<TData extends Movie>({
   className,
 }: DeleteMovieProps<TData>) {
   const [open, setOpen] = React.useState<boolean>(false);
-  const [title, setTitle] = React.useState<string>("");
+  // const [title, setTitle] = React.useState<string>("");
 
   const queryClient = useQueryClient();
   const session = useSession();

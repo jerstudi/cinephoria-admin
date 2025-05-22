@@ -80,7 +80,7 @@ export function CreateCineSessionForm({
 }: CreateCineSessionFormProps) {
   const [open, setOpen] = React.useState<boolean>(false);
   const [comboBoxOpen, setComboBoxOpen] = React.useState<boolean>(false);
-  const [title, setTitle] = React.useState<string>("");
+  // const [title, setTitle] = React.useState<string>("");
 
   const queryClient = useQueryClient();
   const session = useSession();

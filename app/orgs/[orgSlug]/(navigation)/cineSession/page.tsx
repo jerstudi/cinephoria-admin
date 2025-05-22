@@ -1,7 +1,4 @@
 import { CineSessionsStorage } from "@/features/cinephoria/cineSession-navigation/cineSessions-storage";
-import type { CineSession } from "@/features/cinephoria/cineSession-navigation/data/schema";
-
-import { cineSessionColumns } from "@/features/cinephoria/cineSession-navigation/table/columns";
 import {
   Layout,
   LayoutContent,
@@ -12,7 +9,6 @@ import { combineWithParentMetadata } from "@/lib/metadata";
 import { getRequiredCurrentOrgCache } from "@/lib/react/cache";
 import { getOrgsMembers } from "@/query/org/get-orgs-members";
 import type { PageParams } from "@/types/next";
-import type { ColumnDef } from "@tanstack/react-table";
 import { getCineSessions } from "./cineSession.action";
 export const generateMetadata = combineWithParentMetadata({
   title: "Cine Session",

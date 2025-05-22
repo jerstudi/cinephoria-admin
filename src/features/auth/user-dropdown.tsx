@@ -17,6 +17,7 @@ import { Loader } from "@/components/ui/loader";
 import { Typography } from "@/components/ui/typography";
 import { useMutation } from "@tanstack/react-query";
 import {
+  House,
   LayoutDashboard,
   LogOut,
   Monitor,
@@ -52,6 +53,12 @@ export const UserDropdown = ({ children }: PropsWithChildren) => {
           <Typography variant="muted">{session.data.user.email}</Typography>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
+        <DropdownMenuItem asChild>
+          <Link href="/">
+            <House className="mr-2 size-4" />
+            Home
+          </Link>
+        </DropdownMenuItem>
         <DropdownMenuItem asChild>
           <Link href="/orgs">
             <LayoutDashboard className="mr-2 size-4" />

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import type { Row } from "@tanstack/react-table";
@@ -16,7 +17,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 import { DuplicateCity } from "../create/duplicate/duplicate-city";
-import { CitySchema, type City } from "../data/schema";
+import { type City } from "../data/schema";
 import { DeleteCityForm } from "../delete/delete-city-form";
 import { UpdateCityForm } from "../update/update-city-form";
 
@@ -27,7 +28,7 @@ type DataTableRowActionsProps<TData extends City> = {
 export function DataTableRowActions<TData extends City>({
   row,
 }: DataTableRowActionsProps<TData>) {
-  const city = CitySchema.parse(row.original);
+  // const city = CitySchema.parse(row.original);
 
   return (
     <DropdownMenu>

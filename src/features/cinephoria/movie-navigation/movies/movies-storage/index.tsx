@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { LoaderCircle } from "@/components/ui/loader-circle";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import type { ColumnDef } from "@tanstack/react-table";
 import { MovieNavigation } from "../..";
 import { getMovies } from "../../../../../../app/orgs/[orgSlug]/(navigation)/movie/movies.action";
@@ -19,7 +20,7 @@ type Props = {
 };
 
 export const MoviesStorage = ({ movies, columns, members }: Props) => {
-  const queryClient = useQueryClient();
+  // const queryClient = useQueryClient();
 
   const {
     isPending,

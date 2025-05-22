@@ -66,7 +66,7 @@ export default [
       camelcase: 0,
       "no-async-promise-executor": "error",
       "no-await-in-loop": "error",
-      "no-console": "warn",
+      "no-console": "off",
       "no-misleading-character-class": "error",
       "no-multi-assign": "error",
       "no-multi-str": "error",

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { DotPending } from "@/components/svg/dot-pending";
 import { Button } from "@/components/ui/button";

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -134,7 +135,10 @@ export function DeleteManyCineSessions<TData>({
         <Button
           variant={"outline"}
           size={"sm"}
-          className="mr-2 flex w-full items-center justify-start text-sm"
+          className={cn(
+            "mr-2 flex w-full items-center justify-start text-sm",
+            className,
+          )}
         >
           <div className="flex w-full items-center justify-between gap-2">
             <div className="flex w-full items-center justify-between gap-2">

@@ -1,7 +1,7 @@
 export const SiteConfig = {
   title: "Cinephoria",
   description: "The best of cinema",
-  prodUrl: "https://cinephoria.vercel.app",
+  prodUrl: "https://cinephoria-group.vercel.app",
   domain: "vercel.app",
   appIcon: "/assets/svg/Pyramid_red.svg",
   logo: "/assets/svg/Logo_full_a.svg",

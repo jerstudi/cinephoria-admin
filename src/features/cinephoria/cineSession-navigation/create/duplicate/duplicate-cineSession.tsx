@@ -2,6 +2,7 @@
 import { DotPending } from "@/components/svg/dot-pending";
 import { Button } from "@/components/ui/button";
 import { Form, useZodForm } from "@/components/ui/form";
+import { cn } from "@/lib/utils";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import type { Row } from "@tanstack/react-table";
 import { useSession } from "next-auth/react";
@@ -99,7 +100,10 @@ export function DuplicateCineSession<TData extends CineSession>({
         disabled={mutation.isPending}
         variant={"ghost"}
         size={"sm"}
-        className="flex w-full items-center justify-start text-sm"
+        className={cn(
+          "flex w-full items-center justify-start text-sm",
+          className,
+        )}
       >
         {mutation.isPending ? (
           <span className="inline-flex items-end gap-1">

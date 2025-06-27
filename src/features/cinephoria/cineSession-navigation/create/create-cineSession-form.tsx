@@ -227,26 +227,28 @@ export function CreateCineSessionForm({
                                 <CommandList>
                                   <CommandEmpty>No movie found</CommandEmpty>
                                   <CommandGroup>
-                                    {movies.map((movie) => (
-                                      <CommandItem
-                                        key={movie.id}
-                                        value={movie.id}
-                                        onSelect={() => {
-                                          form.setValue("movieId", movie.id);
-                                          setComboBoxOpen(false);
-                                        }}
-                                      >
-                                        {movie.title}
-                                        <Check
-                                          className={cn(
-                                            "ml-auto size-4 shrink-0",
-                                            movie.id === field.value
-                                              ? "opacity-100"
-                                              : "opacity-0",
-                                          )}
-                                        />
-                                      </CommandItem>
-                                    ))}
+                                    <ScrollArea className="h-72 w-full">
+                                      {movies.map((movie) => (
+                                        <CommandItem
+                                          key={movie.id}
+                                          value={movie.title}
+                                          onSelect={() => {
+                                            form.setValue("movieId", movie.id);
+                                            setComboBoxOpen(false);
+                                          }}
+                                        >
+                                          {movie.title}
+                                          <Check
+                                            className={cn(
+                                              "ml-auto size-4 shrink-0",
+                                              movie.id === field.value
+                                                ? "opacity-100"
+                                                : "opacity-0",
+                                            )}
+                                          />
+                                        </CommandItem>
+                                      ))}
+                                    </ScrollArea>
                                   </CommandGroup>
                                 </CommandList>
                               </Command>
@@ -303,7 +305,7 @@ export function CreateCineSessionForm({
                                     {halls.hall.map((hall) => (
                                       <CommandItem
                                         key={hall.id}
-                                        value={hall.id}
+                                        value={hall.hallNumber.toString()}
                                         onSelect={() => {
                                           form.setValue("hallId", hall.id);
                                           setComboBoxOpen(false);
@@ -445,7 +447,7 @@ export function CreateCineSessionForm({
                                     {halls.cinema.map((cinema) => (
                                       <CommandItem
                                         key={cinema.id}
-                                        value={cinema.id}
+                                        value={cinema.name}
                                         onSelect={() => {
                                           form.setValue("cineId", cinema.id);
                                           setComboBoxOpen(false);

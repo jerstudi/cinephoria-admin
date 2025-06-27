@@ -23,3 +23,11 @@ Afin de déployer en local le projet, il est nécessaire de suivre les étapes s
 pnpm install
 pnpm run dev
 ```
+
+Pour synchroniser les schémas Prisma avec ceux de la base de données, exécuter la commande suivante afin d'effectuer la migration Prisma :
+
+```bash
+prisma migrate dev --name init
+```
+
+Pour en savoir plus, cliquer [ici](https://www.prisma.io/docs/orm/prisma-migrate/getting-started)

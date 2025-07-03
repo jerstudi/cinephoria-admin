@@ -24,13 +24,16 @@ export default async function AuthSignInPage() {
     <div className="flex size-full flex-col">
       <header className="sticky top-0 z-40 w-full border-b bg-background">
         <div className="container flex h-16 items-center gap-2">
-          <Image
-            src={SiteConfig.logo}
-            alt="app logo"
-            width={150}
-            height={150}
-            className="rotate-0"
-          />
+          <Link href="/">
+            <Image
+              src={SiteConfig.logo}
+              alt="app logo"
+              width={150}
+              height={150}
+              className="rotate-0"
+            />
+          </Link>
+
           <Link href="/" className="text-xl font-bold">
             {/* {SiteConfig.title} */}
           </Link>

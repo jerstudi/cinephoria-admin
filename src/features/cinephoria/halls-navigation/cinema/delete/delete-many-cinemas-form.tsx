@@ -190,7 +190,7 @@ export function DeleteManyCinemas<TData>({
               Are you sure to delete these cinemas ?
             </div>
             <div className="flex flex-col gap-1 rounded-lg border border-muted p-4">
-              <div className="flex">
+              <ScrollArea className="h-1/2 md:h-72">
                 <Table>
                   <TableHeader>
                     <TableRow>
@@ -198,28 +198,27 @@ export function DeleteManyCinemas<TData>({
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    <ScrollArea className="h-1/2 md:h-72">
-                      {selectedCities.length > 0 ? (
-                        selectedCities.map((cinema) => (
-                          <TableRow
-                            key={cinema.id}
-                            className="flex items-center gap-1 text-sm"
-                          >
-                            <div className="flex w-28 items-center justify-start">
-                              <TableCell className="w-28 bg-zinc-900/50 py-2 text-start text-zinc-500">
-                                {cinema.identifier}
-                              </TableCell>
-                            </div>
-                            <TableCell className="py-2 font-medium">
-                              {/* <CircleDot
+                    {selectedCities.length > 0 ? (
+                      selectedCities.map((cinema) => (
+                        <TableRow
+                          key={cinema.id}
+                          className="flex items-center gap-1 text-sm"
+                        >
+                          <div className="flex w-28 items-center justify-start">
+                            <TableCell className="w-28 bg-zinc-900/50 py-2 text-start text-zinc-500">
+                              {cinema.identifier}
+                            </TableCell>
+                          </div>
+                          <TableCell className="py-2 font-medium">
+                            {/* <CircleDot
                                 className={cn(itemStyle(movie.priority), "h-4")}
                               /> */}
+                          </TableCell>
+                          <div className="flex w-full items-center justify-between gap-1">
+                            <TableCell className="flex items-center justify-start py-2 font-medium">
+                              {cinema.name}
                             </TableCell>
-                            <div className="flex w-full items-center justify-between gap-1">
-                              <TableCell className="flex items-center justify-start py-2 font-medium">
-                                {cinema.name}
-                              </TableCell>
-                              {/* <TableCell className="flex w-28 items-center justify-end py-2">
+                            {/* <TableCell className="flex w-28 items-center justify-end py-2">
                                 <Badge
                                   variant={"outline"}
                                   className="font-light text-zinc-400"
@@ -230,20 +229,19 @@ export function DeleteManyCinemas<TData>({
                                   )}
                                 </Badge>
                               </TableCell> */}
-                            </div>
-                          </TableRow>
-                        ))
-                      ) : (
-                        <TableRow>
-                          <TableCell colSpan={3} className="text-center">
-                            No cinemas found
-                          </TableCell>
+                          </div>
                         </TableRow>
-                      )}
-                    </ScrollArea>
+                      ))
+                    ) : (
+                      <TableRow>
+                        <TableCell colSpan={3} className="text-center">
+                          No cinemas found
+                        </TableCell>
+                      </TableRow>
+                    )}
                   </TableBody>
                 </Table>
-              </div>
+              </ScrollArea>
             </div>
           </div>
           <DialogFooter className="mt-10 sm:justify-start">

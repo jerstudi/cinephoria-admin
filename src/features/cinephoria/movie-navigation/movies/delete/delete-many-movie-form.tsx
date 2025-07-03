@@ -201,7 +201,7 @@ export function DeleteManyMovies<TData>({
               Are you sure to delete these movies ?
             </div>
             <div className="flex flex-col gap-1 rounded-lg border border-muted p-4">
-              <div className="flex">
+              <ScrollArea className="h-1/2 md:h-72">
                 <Table>
                   <TableHeader>
                     <TableRow>
@@ -209,52 +209,46 @@ export function DeleteManyMovies<TData>({
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    <ScrollArea className="h-1/2 md:h-72">
-                      {selectedMovies.length > 0 ? (
-                        selectedMovies.map((movie) => (
-                          <TableRow
-                            key={movie.id}
-                            className="flex items-center gap-1 text-sm"
-                          >
-                            <div className="flex w-28 items-center justify-start">
-                              <TableCell className="w-28 bg-zinc-900/50 py-2 text-start text-zinc-500">
-                                {movie.identifier}
-                              </TableCell>
-                            </div>
-                            <TableCell className="py-2 font-medium">
-                              {/* <CircleDot
-                                className={cn(itemStyle(movie.priority), "h-4")}
-                              /> */}
-                            </TableCell>
-                            <div className="flex w-full items-center justify-between gap-1">
-                              <TableCell className="flex items-center justify-start py-2 font-medium">
-                                {movie.title}
-                              </TableCell>
-                              {/* <TableCell className="flex w-28 items-center justify-end py-2">
-                                <Badge
-                                  variant={"outline"}
-                                  className="font-light text-zinc-400"
-                                >
-                                  {daysRemaining(
-                                    movie.dueOfDate as Date,
-                                    new Date(),
-                                  )}
-                                </Badge>
-                              </TableCell> */}
-                            </div>
-                          </TableRow>
-                        ))
-                      ) : (
-                        <TableRow>
-                          <TableCell colSpan={3} className="text-center">
-                            No movies found
+                    {selectedMovies.length > 0 ? (
+                      selectedMovies.map((movie) => (
+                        <TableRow
+                          key={movie.id}
+                          className="flex items-center gap-1 text-sm"
+                        >
+                          <TableCell className="w-28 bg-zinc-900/50 py-2 text-start text-zinc-500">
+                            {movie.identifier}
                           </TableCell>
+                          <TableCell className="py-2 font-medium">
+                            {/* <CircleDot
+                              className={cn(itemStyle(movie.priority), "h-4")}
+                            /> */}
+                          </TableCell>
+                          <TableCell className="flex items-center justify-start py-2 font-medium">
+                            {movie.title}
+                          </TableCell>
+                          {/* <TableCell className="flex w-28 items-center justify-end py-2">
+                            <Badge
+                              variant={"outline"}
+                              className="font-light text-zinc-400"
+                            >
+                              {daysRemaining(
+                                movie.dueOfDate as Date,
+                                new Date(),
+                              )}
+                            </Badge>
+                          </TableCell> */}
                         </TableRow>
-                      )}
-                    </ScrollArea>
+                      ))
+                    ) : (
+                      <TableRow>
+                        <TableCell colSpan={3} className="text-center">
+                          No movies found
+                        </TableCell>
+                      </TableRow>
+                    )}
                   </TableBody>
                 </Table>
-              </div>
+              </ScrollArea>
             </div>
           </div>
           <DialogFooter className="mt-10 sm:justify-start">

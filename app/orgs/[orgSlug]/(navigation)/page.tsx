@@ -8,6 +8,7 @@ import {
 } from "@/features/page/layout";
 import { isInRoles } from "@/lib/organizations/is-in-roles";
 import { getRequiredCurrentOrgCache } from "@/lib/react/cache";
+import { cn } from "@/lib/utils";
 import type { PageParams } from "@/types/next";
 import Link from "next/link";
 import InformationCards from "./information-cards";
@@ -21,7 +22,7 @@ export default async function RoutePage(
   const org = await getRequiredCurrentOrgCache();
   const params = await props.params;
   return (
-    <Layout>
+    <Layout className={cn("max-w-xs lg:max-w-4xl")}>
       <LayoutHeader>
         <LayoutTitle>Dashboard</LayoutTitle>
       </LayoutHeader>

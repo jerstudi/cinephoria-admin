@@ -197,7 +197,7 @@ export function DeleteManyCineSessions<TData>({
               Are you sure to delete these sessions ?
             </div>
             <div className="flex flex-col gap-1 rounded-lg border border-muted p-4">
-              <div className="flex">
+              <ScrollArea className="h-1/2 md:h-72">
                 <Table>
                   <TableHeader>
                     <TableRow>
@@ -205,28 +205,27 @@ export function DeleteManyCineSessions<TData>({
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    <ScrollArea className="h-1/2 md:h-72">
-                      {selectedCineSessions.length > 0 ? (
-                        selectedCineSessions.map((cineSession) => (
-                          <TableRow
-                            key={cineSession.id}
-                            className="flex items-center gap-1 text-sm"
-                          >
-                            <div className="flex w-40 items-center justify-start">
-                              <TableCell className="w-40 bg-zinc-900/50 py-2 text-start text-zinc-500">
-                                {cineSession.identifier}
-                              </TableCell>
-                            </div>
-                            <TableCell className="py-2 font-medium">
-                              {/* <CircleDot
+                    {selectedCineSessions.length > 0 ? (
+                      selectedCineSessions.map((cineSession) => (
+                        <TableRow
+                          key={cineSession.id}
+                          className="flex items-center gap-1 text-sm"
+                        >
+                          <div className="flex w-40 items-center justify-start">
+                            <TableCell className="w-40 bg-zinc-900/50 py-2 text-start text-zinc-500">
+                              {cineSession.identifier}
+                            </TableCell>
+                          </div>
+                          <TableCell className="py-2 font-medium">
+                            {/* <CircleDot
                                 className={cn(itemStyle(movie.priority), "h-4")}
                               /> */}
+                          </TableCell>
+                          <div className="flex w-full items-center justify-between gap-1">
+                            <TableCell className="flex items-center justify-start py-2 font-medium">
+                              {cineSession.movie?.title}
                             </TableCell>
-                            <div className="flex w-full items-center justify-between gap-1">
-                              <TableCell className="flex items-center justify-start py-2 font-medium">
-                                {cineSession.movie?.title}
-                              </TableCell>
-                              {/* <TableCell className="flex w-28 items-center justify-end py-2">
+                            {/* <TableCell className="flex w-28 items-center justify-end py-2">
                                 <Badge
                                   variant={"outline"}
                                   className="font-light text-zinc-400"
@@ -237,20 +236,19 @@ export function DeleteManyCineSessions<TData>({
                                   )}
                                 </Badge>
                               </TableCell> */}
-                            </div>
-                          </TableRow>
-                        ))
-                      ) : (
-                        <TableRow>
-                          <TableCell colSpan={3} className="text-center">
-                            No sessions found
-                          </TableCell>
+                          </div>
                         </TableRow>
-                      )}
-                    </ScrollArea>
+                      ))
+                    ) : (
+                      <TableRow>
+                        <TableCell colSpan={3} className="text-center">
+                          No sessions found
+                        </TableCell>
+                      </TableRow>
+                    )}
                   </TableBody>
                 </Table>
-              </div>
+              </ScrollArea>
             </div>
           </div>
           <DialogFooter className="mt-10 sm:justify-start">

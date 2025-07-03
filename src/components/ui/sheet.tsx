@@ -73,6 +73,7 @@ const SheetContent = ({
         <Cross2Icon className="size-4" />
         <span className="sr-only">Close</span>
       </SheetPrimitive.Close>
+      <SheetPrimitive.Title className="sr-only">Sheet</SheetPrimitive.Title>
       {children}
     </SheetPrimitive.Content>
   </SheetPortal>
